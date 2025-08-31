@@ -1,0 +1,33 @@
+# Midscene Python Configuration
+
+# AI Model Configuration
+ai:
+  provider: "openai"  # openai, anthropic, qwen, gemini
+  model: "gpt-4-vision-preview"
+  api_key: "${MIDSCENE_AI_API_KEY}"  # Set via environment variable
+  base_url: null  # Custom API endpoint if needed
+  max_tokens: 4000
+  temperature: 0.1
+
+# Web Automation Configuration
+web:
+  browser: "chrome"  # chrome, firefox, safari
+  headless: false
+  window_size: [1920, 1080]
+  user_data_dir: null  # Browser profile directory
+  timeout: 30
+
+# Android Automation Configuration
+android:
+  device_id: null  # Auto-detect if null
+  adb_path: "adb"
+  auto_dismiss_keyboard: true
+  timeout: 30
+
+# Execution Configuration
+execution:
+  concurrent: 1  # Number of concurrent script executions
+  continue_on_error: false  # Continue executing scripts on error
+  generate_report: true
+  report_format: "html"  # html, json, xml
+  output_dir: "./reports"
