@@ -32,11 +32,11 @@ midscene-python/
 │   │   └── agent.py            # Android Agent
 │   ├── cli/                     # 命令行工具
 │   ├── mcp/                     # MCP协议支持
-│   ├── shared/                  # 共享工具
-│   └── visualizer/              # 可视化报告
-├── examples/                    # 示例代码
-├── tests/                       # 测试用例
-└── docs/                        # 文档
+│   ├── shared/                 # 共享工具
+│   └── visualizer/             # 可视化报告
+├── examples/                   # 示例代码
+├── tests/                      # 测试用例
+└── docs/                       # 文档
 ```
 
 ## 技术栈
