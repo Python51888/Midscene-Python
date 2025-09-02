@@ -1,25 +1,44 @@
-.PHONY: help install dev test lint format clean build docs
+.PHONY: help install dev test lint format clean build docs requirements-freeze requirements-check
 
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  install     Install package and dependencies"
-	@echo "  dev         Install development dependencies"
-	@echo "  test        Run tests"
-	@echo "  lint        Run linting"
-	@echo "  format      Format code"
-	@echo "  clean       Clean build artifacts"
-	@echo "  build       Build package"
-	@echo "  docs        Build documentation"
+	@echo "  install            Install package and dependencies"
+	@echo "  dev                Install development dependencies"
+	@echo "  requirements-freeze    Generate complete requirements.txt"
+	@echo "  requirements-check     Verify dependencies integrity"
+	@echo "  requirements-quick-check Quick requirements validation"
+	@echo "  test               Run tests"
+	@echo "  lint               Run linting"
+	@echo "  format             Format code"
+	@echo "  clean              Clean build artifacts"
+	@echo "  build              Build package"
+	@echo "  docs               Build documentation"
 
-# Install package
+# Generate complete requirements.txt with all dependencies
+requirements-freeze:
+	uv pip compile --all-extras pyproject.toml -o requirements.txt
+
+# Verify dependencies integrity
+requirements-check:
+	uv pip check
+	@python scripts/validate_requirements.py
+
+# Quick requirements validation
+requirements-quick-check:
+	@scripts/quick_validate.bat
+
+# Install package from requirements.txt
 install:
-	pip install -e .
+	pip install -r requirements.txt
 
-# Install development dependencies
-dev:
+# Install package in development mode
+install-dev:
 	pip install -e ".[dev,docs]"
 	pre-commit install
+
+# Install development dependencies (alias for backward compatibility)
+dev: install-dev
 
 # Run tests
 test:
