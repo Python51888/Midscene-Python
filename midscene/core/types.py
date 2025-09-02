@@ -8,6 +8,10 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Union, Callable, Awaitable, Generic, TypeVar
 from pydantic import BaseModel
 
+# Type variables
+ElementType = TypeVar('ElementType', bound='BaseElement')
+T = TypeVar('T')
+
 
 class InterfaceType(str, Enum):
     """Interface type enumeration"""
@@ -102,7 +106,7 @@ class UITree(BaseModel):
     children: List['UITree'] = field(default_factory=list)
 
 
-class UIContext(BaseModel, Generic[TypeVar('ElementType', bound=BaseElement)]):
+class UIContext(BaseModel, Generic[ElementType]):
     """UI context containing screenshot and element information"""
     screenshot_base64: str
     size: Size
@@ -124,7 +128,7 @@ class LocateResult(BaseModel):
     rect: Optional[Rect] = None
 
 
-class ExecutionResult(BaseModel, Generic[TypeVar('T')]):
+class ExecutionResult(BaseModel, Generic[T]):
     """Generic execution result"""
     success: bool = True
     data: Optional[Any] = None

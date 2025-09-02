@@ -1,10 +1,10 @@
 # Midscene Python
 
-Midscene 的 Python 实现版本 - 基于 AI 的自动化框架，支持 Web 和 Android 平台的 UI 自动化操作。
+Midscene Python 是一个基于 AI 的自动化框架，支持 Web 和 Android 平台的 UI 自动化操作。
 
 ## 概述
 
-Midscene Python 是原 TypeScript/JavaScript 版本的完整移植，保持相同的核心架构和功能特性：
+Midscene Python 提供全面的 UI 自动化能力，具有以下核心特性：
 
 - **自然语言驱动**：使用自然语言描述自动化任务
 - **多平台支持**：支持 Web（Selenium/Playwright）和 Android（ADB）
