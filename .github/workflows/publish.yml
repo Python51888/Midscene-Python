@@ -1,0 +1,31 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送以 'v' 开头的标签时触发
+
+jobs:
+  build-and-publish:
+    runs-on: windows-latest  # 使用 Windows 环境
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install uv
+        run: |
+          powershell -c "irm https://astral.sh/uv/install.sh | iex"
+          echo "$env:USERPROFILE\.cargo\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Build package
+        run: uv build
+
+      - name: Publish to PyPI
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}  # 使用 UV_PUBLISH_TOKEN 替代 TWINE_PASSWORD
+        run: uv publish dist/*
