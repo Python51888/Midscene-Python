@@ -64,10 +64,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = ""https://github.com/Python51888/midscene-python.git""
-Repository = ""https://github.com/Python51888/midscene-python.git""
+Homepage = "https://github.com/Python51888/midscene-python.git"
+Repository = "https://github.com/Python51888/midscene-python.git"
 Documentation = "https://github.com/Python51888/Midscene-Python/blob/master/README.md"
-"Bug Tracker" = ""https://github.com/Python51888/midscene-python.git"/issues"
+"Bug Tracker" = "https://github.com/Python51888/midscene-python.git/issues"
 
 [project.scripts]
 midscene = "midscene.cli:main"
