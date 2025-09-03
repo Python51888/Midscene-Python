@@ -64,10 +64,10 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/midscenejs/midscene-python"
-Repository = "https://github.com/midscenejs/midscene-python"
-Documentation = "https://midscenejs.com/python"
-"Bug Tracker" = "https://github.com/midscenejs/midscene-python/issues"
+Homepage = ""https://github.com/Python51888/midscene-python.git""
+Repository = ""https://github.com/Python51888/midscene-python.git""
+Documentation = "https://github.com/Python51888/Midscene-Python/blob/master/README.md"
+"Bug Tracker" = ""https://github.com/Python51888/midscene-python.git"/issues"
 
 [project.scripts]
 midscene = "midscene.cli:main"
@@ -121,7 +121,7 @@ warn_unreachable = true
 strict_equality = true
 
 [tool.ruff]
-target-version = "py39"
+target-veersion = "py39"
 line-length = 88
 select = [
     "E",  # pycodestyle errors
