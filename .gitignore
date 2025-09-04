@@ -157,3 +157,6 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 >>>>>>> 2a066347ae84a69f9986cffe451aeae1a5364b10
+
+# YoYo AI version control directory
+.yoyo/
