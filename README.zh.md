@@ -1,4 +1,5 @@
 # Midscene Python
+[English](README.md) | [中文](README.zh.md)
 
 Midscene Python 是一个基于 AI 的自动化框架，支持 Web 和 Android 平台的 UI 自动化操作。
 
