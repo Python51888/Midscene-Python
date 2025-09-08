@@ -1,8 +1,9 @@
+<div align="center">
 # Midscene Python
 [English](README.md) | [中文](README.zh.md)
 
 Midscene Python is an AI-based automation framework that supports UI automation operations on Web and Android platforms.
-
+</div>
 ## Overview
 
 Midscene Python provides comprehensive UI automation capabilities with the following core features:
