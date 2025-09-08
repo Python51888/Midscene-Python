@@ -1,5 +1,5 @@
 <div align="center">
-# Midscene Python
+Midscene Python
 [English](README.md) | [中文](README.zh.md)
 </div>
 Midscene Python is an AI-based automation framework that supports UI automation operations on Web and Android platforms.
